@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{67780749-0FD8-47AD-8DD2-64284F9F8140}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>scons -Q arch=x86</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>scons -c -Q arch=x86</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>
+    </NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir)..\3rd-party\windows\apache\include;$(SolutionDir)..\3rd-party\windows\curl\include;$(SolutionDir)..\3rd-party\windows\jsoncpp\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NMakeBuildCommandLine>scons -Q arch=amd64</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>scons -c -Q arch=amd64</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>
+    </NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir)..\3rd-party\windows\apache\include;$(SolutionDir)..\3rd-party\windows\curl\include;$(SolutionDir)..\3rd-party\windows\jsoncpp\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>scons -Q arch=x86</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>scons -c -Q arch=x86</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>
+    </NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(SolutionDir)..\3rd-party\windows\apache\include;$(SolutionDir)..\3rd-party\windows\curl\include;$(SolutionDir)..\3rd-party\windows\jsoncpp\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NMakeBuildCommandLine>scons -Q arch=amd64</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>scons -c -Q arch=amd64</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>
+    </NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <NMakeIncludeSearchPath>$(SolutionDir)..\3rd-party\windows\apache\include;$(SolutionDir)..\3rd-party\windows\curl\include;$(SolutionDir)..\3rd-party\windows\jsoncpp\include;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Base64.cpp" />
+    <ClCompile Include="Cache.cpp" />
+    <ClCompile Include="Cookie.cpp" />
+    <ClCompile Include="cryptography\Cryptor.cpp" />
+    <ClCompile Include="cryptography\HMAC_SHA1.cpp" />
+    <ClCompile Include="cryptography\SHA1.cpp" />
+    <ClCompile Include="CurlWrapper.cpp" />
+    <ClCompile Include="CustomRequestAttributes.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileInfo.cpp" />
+    <ClCompile Include="GatewayRequest.cpp" />
+    <ClCompile Include="GatewayResponse.cpp" />
+    <ClCompile Include="IdfcFilter.cpp" />
+    <ClCompile Include="IdfcFiltersPool.cpp" />
+    <ClCompile Include="IgnorePattern.cpp" />
+    <ClCompile Include="JavaUtils.cpp" />
+    <ClCompile Include="mod_idfc.cpp" />
+    <ClCompile Include="NetworkInfo.cpp" />
+    <ClCompile Include="QueryString.cpp" />
+    <ClCompile Include="RandomSequence.cpp" />
+    <ClCompile Include="RequestParameters.cpp" />
+    <ClCompile Include="StringProcessor.cpp" />
+    <ClCompile Include="TypesConverter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base64.h" />
+    <ClInclude Include="Cache.h" />
+    <ClInclude Include="Cookie.h" />
+    <ClInclude Include="cryptography\Cryptor.h" />
+    <ClInclude Include="cryptography\HMAC_SHA1.h" />
+    <ClInclude Include="cryptography\SHA1.h" />
+    <ClInclude Include="CurlList.h" />
+    <ClInclude Include="CurlWrapper.h" />
+    <ClInclude Include="CustomRequestAttributes.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FileInfo.h" />
+    <ClInclude Include="GatewayRequest.h" />
+    <ClInclude Include="GatewayResponse.h" />
+    <ClInclude Include="IdfcFilter.h" />
+    <ClInclude Include="IdfcFiltersPool.h" />
+    <ClInclude Include="IgnorePattern.h" />
+    <ClInclude Include="JavaUtils.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="NetworkInfo.h" />
+    <ClInclude Include="PlatformInfo.h" />
+    <ClInclude Include="QueryString.h" />
+    <ClInclude Include="RandomSequence.h" />
+    <ClInclude Include="RequestHeadersWrapper.h" />
+    <ClInclude Include="RequestParameters.h" />
+    <ClInclude Include="StringBuilder.h" />
+    <ClInclude Include="StringProcessor.h" />
+    <ClInclude Include="TypesConverter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="SConstruct" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

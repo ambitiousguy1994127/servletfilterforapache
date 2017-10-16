@@ -1,0 +1,27 @@
+REQUIREMENTS:
+- Visual C++ Redistributable for Visual Studio 2015 (32-bit or 64-bit, depends on Apache version)
+
+INSTALLATION:
+
+1. Install required packages.
+
+2. Copy idfc_mod-x86.dll or idfc_mod-amd64.dll to Apache's modules directory
+   (e.g. C:\wamp\bin\apache\apache2.4.9\modules)
+   
+3. Rename copied file to idfc_mod.dll
+   
+4. a) For 64-bit environment:
+      Copy .\3rd-party\windows\curl\lib64\libcurl.dll to same directory or another system directory
+      (e.g. C:\Windows\SysWOW64):
+   b) For 32-bit environment:
+      Copy .\3rd-party\windows\curl\lib32\libcurl.dll to same directory or another system directory
+      (e.g. C:\Windows\System32):
+
+5. Add loading directive to Apache configuration file
+   (e.g. C:\wamp\bin\apache\apache2.4.9\conf\httpd.conf)
+
+   LoadModule idfc_module modules/mod_idfc.dll
+
+6. Configure module settings for the virtual host (see example in "./config/httpd-vhosts.conf")
+
+7. Reload Apache.

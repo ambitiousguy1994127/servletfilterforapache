@@ -1,0 +1,23 @@
+   DEPLOYING TEST WEB-APPLICATION:
+
+1. Copy sources of application to web-sources directory:
+	$> cp -R v-testdomain.ua /var/www
+
+2. Create MySQL-user 'idfc' with password '1':
+	CREATE USER 'idfc'@'localhost' IDENTIFIED BY '1';
+	GRANT ALL PRIVILEGES ON * . * TO 'idfc'@'localhost';
+	FLUSH PRIVILEGES;
+
+3. Create MySQL-database 'idfc':
+	CREATE DATABASE idfc;
+
+4. Restore database from dump v-testdomain.ua.db:
+	$> mysql -u idfc -p1 idfc < v-testdomain.ua
+
+5. Add to /etc/hosts the following lines:
+	
+	127.0.0.1       www.v-testdomain.ua
+	::1             www.v-testdomain.ua
+
+6. Goto to www.v-testdomain.ua
+   Use login 'admin' and password '1' for logging

@@ -1,0 +1,40 @@
+To configure eclipse to compile and link:
+
+1) Added JSONCPP amalgamated source to project as follows:
+
+    Download https://github.com/open-source-parsers/jsoncpp/archive/master.zip
+    Create amalgamated source (1 cpp, 2 h) and copy into project
+
+[rsand@nginxdev jsoncpp-master]$ python amalgamate.py
+Amalgating header...
+Writing amalgated header to 'dist/json/json.h'
+Amalgating forward header...
+Writing amalgated forward header to 'dist/json/json-forwards.h'
+Amalgating source...
+Writing amalgated source to 'dist/jsoncpp.cpp'
+Source succesfully amalagated
+[rsand@nginxdev jsoncpp-master]$ cp -pR dist/json ~/workspace/SSORest\ Plugin\ for\ Apache/sources
+[rsand@nginxdev jsoncpp-master]$ cp dist/jsoncpp.cpp ~/workspace/SSORest\ Plugin\ for\ Apache/sources/json/
+
+
+2) Set compiler and linker settings:
+
+Project Properties-->C/C++ Build-->Settings
+
+Tool Settings
+     Cross G++ Compiler
+         Dialect-->Language standard: ISO C++11 (-std=C++0x)
+          Includes-->Include paths: /usr/include/httpd, /usr/include/apr-1
+         Miscellaneous-->
+             Other flags: -c -fmessage-length=0
+              Position Independent Code (-fPIC): true
+     Cross G++ Linker
+         Libraries: curl, apr-1, aprutil-1
+    
+Build Artifact
+     Artifact Type: Shared Library
+     Artifact name: mod_ssorest
+     Artifact extension: so
+
+Aggregate compiler settings: -std=c++0x -I/usr/include/httpd -I/usr/include/apr-1 -O0 -g3 -Wall -c -fmessage-length=0 -fPIC
+

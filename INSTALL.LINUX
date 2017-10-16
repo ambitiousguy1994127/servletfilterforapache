@@ -1,0 +1,31 @@
+REQUIREMENTS:
+- libjsoncpp (https://github.com/open-source-parsers/jsoncpp)
+- libcurl (http://curl.haxx.se/libcurl)
+
+INSTALLATION ON REDHAT LINUX:
+
+1. Copy idfc_mod.so to Apache's modules directory
+   (e.g. /usr/lib64/httpd/modules/)
+
+2. Create loading directive in '/etc/httpd/conf.d/idfc.conf' with following content:
+
+   LoadModule idfc_module /usr/lib64/httpd/modules/mod_idfc.so
+
+3. Configure module settings for the virtual host (see example in "./config/v-testdomain.ua.conf")
+
+4. Reload Apache.
+
+
+INSTALLATION ON UBUNTU:
+
+1. Install module from directory 'sources':
+
+$> sudo apxs -i -n idfc mod_idfc.so
+
+2. Enable IDFC-module:
+
+$> a2enmod idfc
+
+3. Configure module settings for the virtual host (see example in "./config/v-testdomain.ua.conf")
+
+4. Reload Apache.
